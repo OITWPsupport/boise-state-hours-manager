@@ -1,0 +1,37 @@
+<div class="allHours">
+    <div class="location" ng-repeat="location in locations">
+        <h2 class="title">{{ location.name }}</h2>
+        <div class="hoursImage">
+            <img ng-src="{{ location.imgPath }}" alt="">
+        </div>
+        <week-hours location="location"></week-hours>
+        <div class="details">
+
+            <div class="contactInfo">
+                <span class="phone" ng-show="location.phone">
+                    Phone: {{ location.phone }}
+                </span>
+                <span class="fax" ng-show="location.fax">
+                    Fax: {{ location.fax }}
+                </span>
+                <span class="address" ng-show="location.address">{{ location.address }}</span> <br>
+            </div>
+            <div class="linksContainer">
+                <div class="links">
+                    <a ng-href="{{ location.fullSchedule }}"
+                       ng-show="location.fullSchedule">
+                        View Full Schedule
+                    </a>
+                    <a ng-href="{{ settings.defaultMapUrl }}"
+                       ng-show="location.showMap">
+                        Facility Map
+                    </a>
+                    <a ng-href="{{ location.reservations }}"
+                       ng-show="location.showReservations && false">
+                        Facility Reservations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

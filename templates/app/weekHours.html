@@ -1,0 +1,10 @@
+<div class="hoursList" ng-show="location.hours">
+    <loading loading="loading"></loading>
+    <div class="bordered row" ng-repeat="hour in location.hours">
+        <div class="dayOfWeek">{{ hour | dayOfWeek }}</div>
+        <div class="time" ng-class="{closed: hour.closed}">
+            {{ hour | openHours }}
+            {{ hour | closeHours }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="frontPage">
+    <div ng-repeat="location in locations" class="row">
+        <div class="name">{{ location.name }}</div>
+        <div class="hours">
+            <today-hours location="location"></today-hours>
+        </div>
+    </div>
+</div>
